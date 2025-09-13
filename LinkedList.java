@@ -55,6 +55,24 @@ public class LinkedList {
         temp.next=newNode;
 
     }
+   public int removeFirst() {
+    if(size == 0){
+        System.out.println("LL is Empty");
+        return Integer.MIN_VALUE;
+    }
+    int val = head.data;     // store first node value
+    if(size == 1){           // if only 1 element
+        head = tail = null;
+    } else {
+        head = head.next;    // move head forward
+    }
+    size--;
+    return val;
+  }
+
+    // public int removeLast(){
+
+    // }
     public void print(){
         Node temp=head;
         while(temp!=null){
@@ -71,6 +89,8 @@ public class LinkedList {
         ll.addLast(56);
         ll.addMiddle(2,23);
         ll.print();
-        System.out.println(size);
+       // System.out.println(size);
+       ll.removeFirst();
+       ll.print();
     }
 }
